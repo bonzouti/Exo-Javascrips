@@ -26,11 +26,19 @@ let journalist_begin_maj = journalist.filter(function(i) {
 console.log(`Combien contiennent une majuscule ?: ${journalist_begin_maj.length}`);
 console.log(journalist_begin_maj);
 
-let journalist_content_ = journalist.filter(function(i) {
-  return i.match(/[_]/);
-})
-console.log(`Combien y a-t-il de underscore _ dans tous les pseudos confondus ?: ${journalist_content_.length}`);
-console.log(journalist_content_);
+console.log("Pseudo avec un _:");
+
+function underscoreNb(array) {
+  let count = 0
+  array.forEach(arrayContent => {
+    if (arrayContent.match(/_/) !== null) {
+      let nb = arrayContent.split("_").length - 1
+      count += nb
+    }
+  })
+  return count;
+}
+console.log(underscoreNb(journalist));
 
 let journalist_alphabetic = journalist.sort();
 console.log(journalist_alphabetic);
@@ -42,4 +50,5 @@ bylength = bylength.slice(0,50)
 console.log(bylength.length)
 console.log(`Les 50 plus courts: ${bylength}`);
 
-console.log(`Quelle est la position dans l'array de la personne @epenser ?:${journalist.indexOf("@epenser")}`);
+console.log(`@epenser est à la position ${journalist.indexOf("@epenser")} dans l'array.`);
+
