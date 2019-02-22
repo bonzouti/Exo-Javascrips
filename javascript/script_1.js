@@ -1,3 +1,4 @@
-let name = prompt('Quel est ton prénom?');
-console.log("Bonjour," +" "+ name+"!");
+console.log("Bonjour,monde !");
 
+let word = prompt('Entre ton prénom stp:');
+console.log(`Bonjour, ${word} !`);
